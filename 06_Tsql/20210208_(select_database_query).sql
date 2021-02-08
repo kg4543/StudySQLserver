@@ -127,3 +127,45 @@ group by userID, height;
 -- 총 데이터 갯수
  select count(*) as '회원수' from userTbl;
  select count(*) as '구매내역수' from buyTbl;
+
+ -- 잘못된 필터링
+ select userID, sum(price * amount) as 'ID별 구매 금액'
+	from buyTbl
+	-- where sum(price * amount) > 1000 / where 절 group by와 같이 사용 안됨
+	group by userID
+	having sum(price * amount) > 1000 -- group by에는 having 절을 사용해야 함
+	order by sum(price * amount) desc;
+
+ -- rollup / cube
+ select num, groupName, sum(price * amount) as '구매금액',
+		 Grouping_ID(groupName, num)
+	from buyTbl
+	group by rollup(groupName, num);
+
+ -- userID, groupName 가지고 cube 다차원 합계
+ select userID, groupName, sum(price * amount) as '구매금액'
+	from buyTbl
+	group by cube(groupName, userID);
+	 
+ select num, sum(price * amount) as '구매금액'
+	from buyTbl
+	group by rollup(num);
+ select groupName, sum(price * amount) as '구매금액'
+	from buyTbl
+	group by rollup(groupName);
+
+ -- widthout CTE
+ select userID, sum(price * amount) as 'total'
+	from buyTbl
+	group by userID
+	order by sum(price * amount) desc;
+
+ -- with CTE : 임시의 테이블을 제작
+ with cte_tmp(userID, total)
+ as
+ (
+	select userID, sum(price*amount) as 'total'
+	from buyTbl
+	group by userID
+ )
+ select * from cte_tmp order by total  desc;
