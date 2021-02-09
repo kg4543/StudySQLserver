@@ -1,0 +1,22 @@
+{
+    "userTbl": [
+        {
+            "userID": "LJB     ",
+            "userName": "임재범",
+            "addr": "서울",
+            "height": 182
+        },
+        {
+            "userID": "LSG     ",
+            "userName": "이승기",
+            "addr": "서울",
+            "height": 182
+        },
+        {
+            "userID": "SSK     ",
+            "userName": "성시경",
+            "addr": "서울",
+            "height": 186
+        }
+    ]
+}
