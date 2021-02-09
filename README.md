@@ -1,5 +1,6 @@
 # Study_SQL_server
-SQL server에 관련된 교육사항
+
+SSMS(SQL Server Management Studio) tool을 활용하여 DataBase 관리
 --------------------------------------
 
 ## 1. Create
