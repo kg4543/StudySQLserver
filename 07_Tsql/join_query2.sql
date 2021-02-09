@@ -24,11 +24,12 @@ select s.id, s.stdName, c.clubName, c.buildingNum
 
  -- outer join(외부조인)
  -- right join이 기준 테이블 / left는 반대 / full은 전부
+ -- 기준이 되면 겹치는 거 없어도 테이블내용 다 나옴
 select s.id, s.stdName, c.clubName, c.buildingNum
   from stdTbl as s
   left outer join clubRegTbl as r  
 	on s.id = r.std_id
-  left outer join clubTbl as c
+  right outer join clubTbl as c
 	on r.club_id = c.id
   
 select *
@@ -47,5 +48,4 @@ select *
  select u.userName, u.addr, b.prodName, b.price
    from userTbl as u
    left outer join buyTbl as b 
-     on u.userID = b.userID
-  where b.prodName is null;
+     on u.userID = b.userID;
