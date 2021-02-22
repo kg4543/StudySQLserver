@@ -4,6 +4,7 @@ select lower(Email) as 'email'
 	   ,Names
 	   ,Addr 
   from membertbl
+ order by Names desc
 
 -- 1-2
 select Names
