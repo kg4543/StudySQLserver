@@ -35,25 +35,41 @@ go
 
 ### 4. Truncate
 * Truncate table [table명]
-
+```
+ truncate table testTbl1;
+```
 -----------------------------------------
 ## DML(Data Manipulation Language)
 
 ### 1. Select
 * Select [column명] from [table명] [where 조건] [Group by column명 having 조건] [Order by column명 Asc | Desc]
+[Select SQL](/main/06_Tsql/select_database_query.sql)
 
 ### 2. Insert
 * Insert into [table명] (컬럼명1,...) values (컬럼값1,...)
 ```
-insert into userTbl values('LSG', '이승기', 1987, '서울', '011', '11111111', 182, '2008-8-8');
-insert into userTbl values('KBS', '김범수', 1979, '경남', '011', '22222222', 173, '2012-4-4');
+insert into testTbl1 values (1, '홍길동', 25);
+insert into testTbl1 (id, userName) values (2, '이재명');
+insert into testTbl1 (id, userName) values (3, '김순경');
+insert into testTbl1 (age, id) values (30, 4);
+insert into testTbl1 (age, userName) values (30, '이청장'); --에러 (PK값 부재)
+insert into testTbl1 values (3, '김순경'); --에러 (값 전부 안 넣음)
+
 ```
 ### 3. Update
 * Update [table명] set [column명] = [column값] [where 조건]
-
+```
+update testTbl1
+   set userName = '성수경',	
+       age = 30
+ where id = 6;
+```
 ### 4. Delete
 * Delete from [table명] [where 조건]
-
+```
+delete from testTbl1
+ where id = 12;
+```
 -----------------------------------------
 ## DCL(Data Control Language)
 
