@@ -6,9 +6,9 @@
 ## DDL(Data Definition Language)
 
 ### 1. Create
-* Create table [table명](컬럼명1 데이터타입 제약조건,컬럼명2...)
+* Create table [table명] (컬럼명1 데이터타입 제약조건,컬럼명2...)
 * Create view [view명] as [조회 Query]
-* Create index [index명] on [table명](컬럼명1,컬럼명2...)
+* Create index [index명] on [table명] (컬럼명1,컬럼명2...)
 
 ```
 create table userTbl -- 회원 테이블
@@ -43,7 +43,7 @@ go
 * Select [column명] from [table명] [where 조건] [Group by column명 having 조건] [Order by column명 Asc | Desc]
 
 ### 2. Insert
-* Insert into [table명](컬럼명1,...) values (컬럼값1,...)
+* Insert into [table명] (컬럼명1,...) values (컬럼값1,...)
 
 ### 3. Update
 * Update [table명] set [column명] = [column값] [where 조건]
