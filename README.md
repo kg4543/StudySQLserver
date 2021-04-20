@@ -4,9 +4,12 @@
 --------------------------------------
 
 ## DDL(Data Definition Language)
+
 ### 1. Create
-* DB 생성 및 Table 설계
-* Create table [table명](컬럼명1 데이터타입 제약조건)
+* Create table [table명](컬럼명1 데이터타입 제약조건,컬럼명2...)
+* Create view [view명] as [조회 Query]
+* Create index [index명] on [table명](컬럼명1,컬럼명2...)
+
 ```
 create table userTbl -- 회원 테이블
 (
@@ -20,44 +23,42 @@ create table userTbl -- 회원 테이블
 	mDate	date -- 회원 가입일 / 마지막 필드여서 ',' 없슴
 );
 go
-create table buyTbl -- 회원 구매 테이블
-(
-	num	int identity not null primary key,	-- 순번(PK)
-	userID	char(8)	not null	-- 아이디(FK)
-	foreign key references userTbl(userID),
-	prodName nvarchar(20) not null,	-- 물품명
-	groupName nchar(4),	-- 분류
-	price int not null,	-- 단가
-	amount smallint not null	-- 수량
-);
-go
 ```
----------------------------------------
 
-## 2. Insert
+### 2. Alter
+* Alter table [table명] ADD 컬럼명 데이터타입 제약조건
+* Alter table [table명] Modify 컬럼명 데이터타입 제약조건
+* Alter table [table명] Drop 컬럼명
 
----------------------------------------
+### 3. Drop
+* Drop table [table명] [casecade | restrict]
 
-## 3. Select
+### 4. Truncate
+* Truncate table [table명]
 
----------------------------------------
+-----------------------------------------
+## DML(Data Manipulation Language)
 
-## 4. Update
+### 1. Select
+* Select [column명] from [table명] [where 조건] [Group by column명 having 조건] [Order by column명 Asc | Desc]
 
----------------------------------------
+### 2. Insert
+* Insert into [table명](컬럼명1,...) values (컬럼값1,...)
 
-## 5. Delete
+### 3. Update
+* Update [table명] set [column명] = [column값] [where 조건]
 
----------------------------------------
+### 4. Delete
+* Delete from [table명] [where 조건]
 
-## 6. Join
+-----------------------------------------
+## DCL(Data Control Language)
 
----------------------------------------
-## 7. SQL_Programing
+### 1. Grant
+* Grant [권한] On [table명] To [사용자]
 
-* 변수 선언
-* IF_조건문
-* Case_조건문
+### 2. Revoke
+* Revoke [권한] On [table명] From [사용자]
 
----------------------------------------
-## 8. 제약조건
+------------------------------------------
+## TSQL(Transact-SQL)
