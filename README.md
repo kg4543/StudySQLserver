@@ -1,6 +1,6 @@
 # Study_SQL_server
-
-SSMS(SQL Server Management Studio) tool을 활용하여 DataBase 관리
+ 
+ - SSMS(SQL Server Management Studio) tool을 활용하여 DataBase 관리
 --------------------------------------
 
 ## 1. Create
