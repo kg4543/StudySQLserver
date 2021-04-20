@@ -42,8 +42,8 @@ go
 ## DML(Data Manipulation Language)
 
 ### 1. Select
-* Select [column명] from [table명] [where 조건] [Group by column명 having 조건] [Order by column명 Asc | Desc]
-[Select SQL](/main/06_Tsql/select_database_query.sql)
+* Select [column명] from [table명] [where 조건] [Group by column명 having 조건] [Order by column명 Asc | Desc] <br/>
+[Select SQL](https://github.com/kg4543/StudySQLserver/blob/main/06_Tsql/select_database_query.sql)
 
 ### 2. Insert
 * Insert into [table명] (컬럼명1,...) values (컬럼값1,...)
