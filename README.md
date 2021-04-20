@@ -61,4 +61,3 @@ go
 * Revoke [권한] On [table명] From [사용자]
 
 ------------------------------------------
-## TSQL(Transact-SQL)
