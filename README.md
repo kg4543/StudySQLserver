@@ -3,8 +3,10 @@
  - SSMS(SQL Server Management Studio) tool을 활용하여 DataBase 관리
 --------------------------------------
 
-## 1. Create
+## DDL(Data Definition Language)
+### 1. Create
 * DB 생성 및 Table 설계
+* Create table [table명](컬럼명1 데이터타입 제약조건)
 ```
 create table userTbl -- 회원 테이블
 (
