@@ -44,7 +44,10 @@ go
 
 ### 2. Insert
 * Insert into [table명] (컬럼명1,...) values (컬럼값1,...)
-
+```
+insert into userTbl values('LSG', '이승기', 1987, '서울', '011', '11111111', 182, '2008-8-8');
+insert into userTbl values('KBS', '김범수', 1979, '경남', '011', '22222222', 173, '2012-4-4');
+```
 ### 3. Update
 * Update [table명] set [column명] = [column값] [where 조건]
 
